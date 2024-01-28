@@ -21,14 +21,14 @@ const contentStyle: React.CSSProperties = {
   minHeight: 120,
   lineHeight: '120px',
   color: '#fff',
-  backgroundColor: '#0958d9',
+  backgroundColor: '#282c34',
 };
 
 const siderStyle: React.CSSProperties = {
   textAlign: 'center',
   lineHeight: '120px',
   color: '#fff',
-  backgroundColor: '#1677ff',
+  backgroundColor: '#282c34',
 };
 
 const footerStyle: React.CSSProperties = {
@@ -47,26 +47,19 @@ const layoutStyle = {
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={avatar} alt="logo" width='160px' style={{ paddingTop: '10px' }} />
-        <h1 style={{ color: 'black', textAlign: 'center' }}>
-          这是
-        </h1>
-        <h6 style={{ color: 'black', textAlign: 'center' }}>
-          日期
-        </h6>
-        {/* <div style={{ textAlign: "right" }}>
-          <img src={avatar} alt="logo" height='40px' style={{ marginRight: '20px' }} />
-          <img src={avatar} alt="logo" height='56px' />
-        </div> */}
-      </header>
       <Flex gap="middle" wrap="wrap">
         <Layout style={layoutStyle}>
-          <Header style={headerStyle}>
-          <Avatar size={64} icon={<UserOutlined />} />
-          </Header>
-          <Content style={contentStyle}>Content</Content>
-          <Footer style={footerStyle}>Footer</Footer>
+          <Sider width="25%" style={siderStyle}>
+            <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
+              <Avatar size={64} icon={<UserOutlined />} />
+              Woody
+            </Space>
+          </Sider>
+          <Layout>
+            <Header style={headerStyle}>Header</Header>
+            <Content style={contentStyle}>Content</Content>
+            <Footer style={footerStyle}>Footer</Footer>
+          </Layout>
         </Layout>
       </Flex>
       <div style={{ background: "white" }}>
